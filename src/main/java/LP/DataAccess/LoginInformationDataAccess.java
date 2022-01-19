@@ -26,7 +26,8 @@ public class LoginInformationDataAccess {
                 int customer_id=resultSelect.getInt(1);
                 String customer_username=resultSelect.getNString(2);
                 String customer_password=resultSelect.getNString(3);
-                LoginInformation loginInformation=new LoginInformation(customer_id,customer_username,customer_password);
+                String signup_date=resultSelect.getString(4);
+                LoginInformation loginInformation=new LoginInformation(customer_id,customer_username,customer_password,signup_date);
                 resultSelectList.add(loginInformation);
             }
         } catch (SQLException e) {
@@ -35,9 +36,9 @@ public class LoginInformationDataAccess {
         return resultSelectList;
     }
 
-    public void CreateLoginInformation(int customer_id,String customer_username,String customer_password)
+    public void CreateLoginInformation(int customer_id,String customer_username,String customer_password,String signup_date)
     {
-        String query=String.format("INSERT INTO login_information(customer_id,customer_username,customer_password) VALUES ('%d','%s','%s')",customer_id,customer_username,customer_password);
+        String query=String.format("INSERT INTO login_information(customer_id,customer_username,customer_password,signup_date) VALUES ('%d','%s','%s','%s')",customer_id,customer_username,customer_password,signup_date);
         baseDataAccess.ExecuteCUD(query);
     }
 

@@ -5,12 +5,14 @@ public class Transaction {
     public int customer_id;
     public int total_price;
     public String method_of_payment;
+    public String transaction_date;
 
-    public Transaction(int transaction_id, int customer_id, int total_price, String method_of_payment) {
+    public Transaction(int transaction_id, int customer_id, int total_price, String method_of_payment, String transaction_date) {
         this.transaction_id = transaction_id;
         this.customer_id = customer_id;
         this.total_price = total_price;
         this.method_of_payment = method_of_payment;
+        this.transaction_date = transaction_date;
     }
 
     public int getTransaction_id() {
@@ -45,6 +47,14 @@ public class Transaction {
         this.method_of_payment = method_of_payment;
     }
 
+    public String getTransaction_date() {
+        return transaction_date;
+    }
+
+    public void setTransaction_date(String transaction_date) {
+        this.transaction_date = transaction_date;
+    }
+
     @Override
     public String toString() {
         return "Transaction{" +
@@ -52,6 +62,7 @@ public class Transaction {
                 ", customer_id=" + customer_id +
                 ", total_price=" + total_price +
                 ", method_of_payment='" + method_of_payment + '\'' +
+                ", transaction_date='" + transaction_date + '\'' +
                 '}';
     }
 }

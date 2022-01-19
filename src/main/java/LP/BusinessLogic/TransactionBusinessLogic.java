@@ -23,8 +23,8 @@ public class TransactionBusinessLogic {
         return temp;
     }
 
-    public void CreateTransaction(int customer_id,int total_price,String method_of_payment) {
-        transactionDataAccess.CreateTransaction(customer_id,total_price,method_of_payment);
+    public void CreateTransaction(int customer_id,int total_price,String method_of_payment,String transaction_date) {
+        transactionDataAccess.CreateTransaction(customer_id,total_price,method_of_payment,transaction_date);
     }
 
     public void DeleteTransaction(int transaction_id) {

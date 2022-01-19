@@ -11,7 +11,6 @@ import java.util.List;
 public class InstrumentBusinessLogic {
     private InstrumentDataAccess instrumentDataAccess;
 
-
     @Autowired
     public InstrumentBusinessLogic(InstrumentDataAccess instrumentDataAccess) {
         this.instrumentDataAccess = instrumentDataAccess;

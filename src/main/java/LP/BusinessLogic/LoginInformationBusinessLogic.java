@@ -22,8 +22,8 @@ public class LoginInformationBusinessLogic {
         return temp;
     }
 
-    public void CreateLoginInformation(int customer_id,String customer_username, String customer_password) {
-        loginInformationDataAccess.CreateLoginInformation(customer_id,customer_username,customer_password);
+    public void CreateLoginInformation(int customer_id,String customer_username, String customer_password,String signup_date){
+        loginInformationDataAccess.CreateLoginInformation(customer_id,customer_username,customer_password,signup_date);
     }
 
     public void DeleteLoginInformation(int customer_id) {

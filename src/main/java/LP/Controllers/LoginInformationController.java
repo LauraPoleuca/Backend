@@ -23,8 +23,8 @@ public class LoginInformationController {
     }
 
     @PostMapping
-    public void CreateLoginInformation(@RequestParam int customer_id,@RequestParam String customer_username,@RequestParam String customer_password){
-        loginInformationBusinessLogic.CreateLoginInformation(customer_id,customer_username,customer_password);
+    public void CreateLoginInformation(@RequestParam int customer_id,@RequestParam String customer_username,@RequestParam String customer_password,@RequestParam String signup_date){
+        loginInformationBusinessLogic.CreateLoginInformation(customer_id,customer_username,customer_password,signup_date);
     }
 
     @DeleteMapping

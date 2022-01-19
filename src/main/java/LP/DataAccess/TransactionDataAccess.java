@@ -27,7 +27,8 @@ public class TransactionDataAccess {
                 int customer_id=resultSelect.getInt(2);
                 int total_price=resultSelect.getInt(3);
                 String method_of_payment=resultSelect.getNString(4);
-                Transaction transaction=new Transaction(transaction_id,customer_id,total_price,method_of_payment);
+                String transaction_date=resultSelect.getString(5);
+                Transaction transaction=new Transaction(transaction_id,customer_id,total_price,method_of_payment,transaction_date);
                 resultSelectList.add(transaction);
             }
         } catch (SQLException e) {
@@ -36,15 +37,15 @@ public class TransactionDataAccess {
         return resultSelectList;
     }
 
-    public void CreateTransaction(int customer_id,int total_price,String method_of_payment)
+    public void CreateTransaction(int customer_id,int total_price,String method_of_payment,String transaction_date)
     {
-        String query=String.format("INSERT INTO transaction(customer_id,total_price,method_of_payment) VALUES ('%d','%d','%s')",customer_id,total_price,method_of_payment);
+        String query=String.format("INSERT INTO transaction(customer_id,total_price,method_of_payment,transaction_date) VALUES ('%d','%d','%s','%s')",customer_id,total_price,method_of_payment,transaction_date);
         baseDataAccess.ExecuteCUD(query);
     }
 
-    public void UpdateTransaction(int transaction_id,int customer_id,int total_price,String method_of_payment) {
-        String query = String.format("UPDATE transaction SET customer_id= '%d', total_price='%d',method_of_payment='%s' WHERE transaction_id = '%d'",
-                customer_id,total_price,method_of_payment);
+    public void UpdateTransaction(int transaction_id,int customer_id,int total_price,String method_of_payment,String transaction_date) {
+        String query = String.format("UPDATE transaction SET customer_id= '%d', total_price='%d',method_of_payment='%s',transaction_date='%s' WHERE transaction_id = '%d'",
+                customer_id,total_price,method_of_payment,transaction_date);
         baseDataAccess.ExecuteCUD(query);
     }
 

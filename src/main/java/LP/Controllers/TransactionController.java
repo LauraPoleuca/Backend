@@ -23,8 +23,8 @@ public class TransactionController {
     }
 
     @PostMapping
-    public void CreateTransaction(@RequestParam int customer_id, @RequestParam int total_price,@RequestParam String method_of_payment){
-        transactionBusinessLogic.CreateTransaction(customer_id,total_price,method_of_payment);
+    public void CreateTransaction(@RequestParam int customer_id, @RequestParam int total_price,@RequestParam String method_of_payment,@RequestParam String transaction_date){
+        transactionBusinessLogic.CreateTransaction(customer_id,total_price,method_of_payment,transaction_date);
     }
 
     @DeleteMapping
